@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-brithday=p.read_csv(r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\letter_templates\birthdays.csv")
+brithday=p.read_csv(r"birthdays.csv")
 # print(brithday.to_dict(orient="records"))
 brithdata=brithday.to_dict(orient="records")
 # print(brithdata)
@@ -18,11 +18,11 @@ today=to.day
 tomonth=to.month
 for i in brithdata:
     if today==int(i['day']) and tomonth==int(i['month']):
-        l=[r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\letter_templates\letter_1.txt",r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\letter_templates\letter_2.txt",r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\letter_templates\letter_3.txt"]
+        l=[r"letter_1.txt",r"letter_2.txt",r"letter_3.txt"]
         randl=r.choice(l)
         with open(f"{randl}","r") as re:
             c=re.read()
-        newc=c.replace('NAME,',f"{i['name']}")
+        newc=c.replace('[NAME],',f"{i['name']}")
         with smtplib.SMTP("smtp.gmail.com") as c:
             c.starttls()
             c.login(user=my,password=password)
