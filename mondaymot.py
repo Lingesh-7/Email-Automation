@@ -6,7 +6,7 @@ monday=dt.datetime.now()
 # print(monday.weekday())
 my=os.environ.get("EMAIL_KEY")
 password=os.environ.get("PASSWORD_KEY")
-'''git remote add origin https://github.com/Lingesh-7/Email-Automation.git'''
+''''''
 if monday.weekday()==0:
     with open(r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\quotes.txt","r") as q:
         qoutes=q.read().split('\n')
