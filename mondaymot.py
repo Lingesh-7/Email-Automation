@@ -8,7 +8,7 @@ my=os.environ.get("EMAIL_KEY")
 password=os.environ.get("PASSWORD_KEY")
 ''''''
 if monday.weekday()==0:
-    with open(r"C:\Users\linge\Desktop\python 100 days\projects\pr-32\quotes.txt","r") as q:
+    with open(r"quotes.txt","r") as q:
         qoutes=q.read().split('\n')
     
     with smtplib.SMTP("smtp.gmail.com") as c:
